@@ -12,6 +12,6 @@ $ python manage.py createsuperuser
 $python manage.py runserver
 ```
 3.Project will now successfully run on https://localhost:8000/
-
-##Demo of Project ⬇️
+####### 
+## Demo of Project ⬇️
 ![page-1](https://github.com/NeerajJ16/DS-Blogsite-using-Django/blob/master/project-images/Screenshot%20(1).png)
