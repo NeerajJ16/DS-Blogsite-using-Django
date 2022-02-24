@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+      <div class="container">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-12">
+              {%for lesson in lessons %}
+            <div class="card my-4">
+                <h5 class="card-header">{{lesson.title}}</h5>
+                <div class="card-body">
+                  <p class="card-text">{{lesson.description|safe}}</p>
+                  <a href="notes?category={{lesson.category.id}}" class="btn btn-dark btn-sm">Back to Lesson</a>
+                </div>
+              </div>
+              {%endfor%}
+          </div>
+          <div class="col"></div>
+        </div>
+{% endblock%}

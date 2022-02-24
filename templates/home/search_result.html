@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+
+{%block title %}Searching Results{%endblock title %}
+
+{% block content %}
+
+<div class="container mx-4, my-3">
+    <h4>Searched Results</h4>
+
+    {% if allNotes|length < 1 %}
+    <div class="card">
+      <h5 class="card-header">Sorry! Unable to Fetch what you are searching for.</h5>
+      <div class="card-body">
+        <h5 class="card-title">Please Try it with using Different Keyword</h5>
+      </div>
+    </div>
+    {% endif %}
+    {% for note in allNotes %}
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h4 class="mb-0">{{note.title}}</h4><br>
+          <b>Description:</b>
+          <p class="card-text mb-auto">{{note.description|truncatechars_html:100|safe}}</p>
+         <div class=my-1>
+          <a href="/components/{{note.title}}" role="button "class="btn btn-warning">Continue reading</a>
+         </div>
+        </div>
+      </div>
+{% endfor %}
+<div class="row">
+  <div class="col"></div>
+<div class="col-9">
+  <div class="card text-center">
+    <div class="card-body">
+      <a href="/" class="btn btn-danger btn-sm">Go Back to Home</a>
+    </div>
+  </div>
+</div>
+<div class="col"></div>
+</div>
+{% endblock content %} 
